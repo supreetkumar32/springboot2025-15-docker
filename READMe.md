@@ -66,4 +66,33 @@ run the command (docker login)
 run the command (docker tag product-service:v0.0.1 supreet32/product-service)
 docker push supreet32/product-service:latest
 
+DOCKER COMPOSE
+Docker Compose is a tool that makes it easier to create and run multi-container
+applications. It automates the process of managing several Docker containers
+simultaneously, such as a website frontend, API, and database service.
 
+Docker vs Docker-compose
+Docker is a containerization engine that provides a CLI for building, running, and
+managing individual containers on your host.
+Compose is a tool that expands Docker with support for multi-container management. It
+supports “stacks” of containers that are declaratively defined in project-level config
+files.
+
+Creating docker-compose.yml
+Define the following:
+Version
+Services
+Networks
+volumes
+
+Docker compose yml services
+services:
+• image:
+• container_name:
+• ports: Maps host machine ports to container ports (e.g., "8080:80" maps port 8080 on
+the host to port 80 in the container).
+• volumes: Mounts directories or files from the host into the container
+• environment: Set environment variables inside the container (e.g.,
+POSTGRES_DB=mydatabase).
+• depends_on: Ensures that one service starts before this one
+• networks: Specifies which networks the service will connect to.
