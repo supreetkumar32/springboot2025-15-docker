@@ -111,4 +111,16 @@ we have changed the code in the Dockerfile so that we dont have to create the ja
 now, run the command (docker build -t supreet32/product-service .)
 check for image (docker images)
 now to run the docker-compose.yml file (docker-compose up)
-now database got created
+now database got created (not locally....its in docker volume)
+
+now done with some basic spring boot code
+we have done some code changes .so stop the docker compose (docker-compose down)
+rebuilt the docker image(docker build -t supreet32/product-service .)
+then run (docker-compose up)
+now, using the postman in local hit the POST url (http://localhost:8080/products)
+with body as
+{
+"title":"Apple"
+}
+
+get the products (GET http://localhost:8080/products)

@@ -1,14 +1,33 @@
 package com.fifteen.ecommerce.product_service.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fifteen.ecommerce.product_service.entity.Product;
+import com.fifteen.ecommerce.product_service.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/products")
+@RequiredArgsConstructor
 public class ProductController {
+
+    private final ProductService productService;
+
     @GetMapping("/hello")
-    public String hello(){
-        return "hello from spring boot";
+    public String hello() {
+        return "Hello from Spring Boot";
     }
+
+    @PostMapping
+    public String createProduct(@RequestBody Product product) {
+        productService.createProduct(product);
+        return "Product has been created";
+    }
+
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
 }
