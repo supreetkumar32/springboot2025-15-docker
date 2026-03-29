@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   product-db:
-    image: postgres
+    image: postgres:15
     container_name: product-db
 #    ports:
 #       - "5432:5432"

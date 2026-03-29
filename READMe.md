@@ -98,3 +98,17 @@ POSTGRES_DB=mydatabase).
 • networks: Specifies which networks the service will connect to.
 
 till now we have connected to the database
+
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:go-offline
+
+COPY src ./src
+
+CMD ["./mvnw", "spring-boot:run"]
+we have changed the code in the Dockerfile so that we dont have to create the jar file again and again
+
+now, run the command (docker build -t supreet32/product-service .)
+check for image (docker images)
+now to run the docker-compose.yml file (docker-compose up)
+now database got created
