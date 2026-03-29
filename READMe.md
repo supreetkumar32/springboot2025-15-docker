@@ -50,3 +50,20 @@ stopping the container with ctrl+c
 now creating a new version (docker build -t product-service:v0.0.2 .)
 docker run -p 8080:8080 product-service:v0.0.1 (for running the image)
 now if we hit localhost:8080/products/hello in my local it will show the result
+
+now pushing our docker images to docker hub
+
+////////////////
+Push Images To DockerHub
+Step 1: Create an Account on Docker hub (hub.docker.com)
+Step 2: Run docker login on terminal and provide the username and password
+Step 3: Tag the image:
+docker tag <image-name>:<version> <username>/<image-name>
+Step 4: Push the image:
+docker push <username>/<image-name>:<version>
+//////////////////////
+run the command (docker login)
+run the command (docker tag product-service:v0.0.1 supreet32/product-service)
+docker push supreet32/product-service:latest
+
+
