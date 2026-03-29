@@ -96,3 +96,5 @@ the host to port 80 in the container).
 POSTGRES_DB=mydatabase).
 • depends_on: Ensures that one service starts before this one
 • networks: Specifies which networks the service will connect to.
+
+till now we have connected to the database
